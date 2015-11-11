@@ -7,7 +7,7 @@ Dotenv.load
 
 class DeployApp < Sinatra::Base
 
-  get '/' do
+  get '/*' do
     content_type 'text/html'
 
     prefix    = "#{ENV['APP_NAME']}:index"
