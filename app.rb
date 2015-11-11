@@ -9,7 +9,8 @@ get '/' do
   content_type 'text/html'
 
   prefix    = "#{ENV['APP_NAME']}:index"
-  redis     = Redis.new(url: ENV['REDIS_URL'])
+  redis     = Redis.new host: ENV['REDIS_HOST'], \
+    port: ENV['REDIS_PORT'], password: ENV['REDIS_SECRET']
   index_key = redis.get("#{prefix}:current")
   if params[:index_key]
     index_key = "#{params[:index_key]}"
