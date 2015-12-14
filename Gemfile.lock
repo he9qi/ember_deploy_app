@@ -43,6 +43,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   dotenv
+  rack
   redis
   sinatra
   sinatra-reloader
